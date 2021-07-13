@@ -1,10 +1,12 @@
 from flask import request, url_for, jsonify
 from flask_api import FlaskAPI, status, exceptions
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
 app = FlaskAPI(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app)
 db = SQLAlchemy(app)
 
 class Books(db.Model):
