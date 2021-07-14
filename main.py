@@ -37,7 +37,7 @@ def serialize(book):
     }
 
 
-@app.route("/books", methods=['GET', 'POST'])
+@app.route("/books/", methods=['GET', 'POST'])
 def books_list():
     """
     List or create notes.
