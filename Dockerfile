@@ -3,6 +3,7 @@ FROM python:3.8-slim-buster
 WORKDIR /flask-docker
 
 COPY requirements.txt requirements.txt
+RUN python -m pip install --upgrade pip
 RUN pip3 install -r requirements.txt
 EXPOSE 5000
 COPY . .
